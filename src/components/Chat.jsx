@@ -1,8 +1,10 @@
 const Chat = () => {
   return (
-    <div>
-        <h1>Chat</h1>
-    </div>
+    <>
+      <section>
+        <h1>Hola desde el chat</h1>
+      </section>
+    </>
   )
 }
 
