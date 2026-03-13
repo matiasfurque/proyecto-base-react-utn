@@ -33,16 +33,19 @@ const Aside = () => {
   //for()
   //forEach()
 
-  const filteredUsers = users.filter((user) => user.firstName.toLowerCase().includes(search.toLowerCase()))
+  const filteredUsers = users.filter((user) =>
+  user.firstName.toLowerCase().includes(search.toLowerCase()) ||
+  user.lastName.toLowerCase().includes(search.toLowerCase())
+)
   
 
   return (
     <>
       <aside>
         <h1>CHAT UTN</h1>
-        <input type="search" placeholder="Buscar contacto" onChange={handleChange}/>
+        <input className = "search" type="search" placeholder="Buscar contacto" onChange={handleChange}/>
         {
-          filteredUsers.length === 0 ? <p>No hay contactos que coincidan con la búsqueda.</p> : " "
+          filteredUsers.length === 0 ? <p className="not-found-text">No hay contactos que coincidan con la búsqueda.</p> : " "
         }
         <ul>
           {
