@@ -23,8 +23,12 @@ section {
   flex: 1;
 }
 /*aside styles*/
-aside h1{
-  margin-bottom: 10px;
+aside h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1f2937;
 }
 .search{
   padding: 8px;
@@ -63,10 +67,22 @@ li span {
   color: gray;
 }
 /*chat styles*/
+
+
 .chat{
   display: flex;
   flex-direction: column;
 }
+.chat-initial-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.initial-message{
+  color: gray;
+  font-size: 25px 
+}
+
 .chat header{
   border-bottom: 1px solid #ccc;
   padding: 15px;;
@@ -94,6 +110,14 @@ li span {
   text-align: end;
   margin-top: 5px;
 }
+.received{
+  align-self: start;
+}
+.me {
+  background-color: #1ebe5e2c;
+  align-self: end;
+}
+/*estilos de input*/
 .chat-input{
   padding: 10px;
   display: flex;
@@ -120,6 +144,8 @@ li span {
 .chat-input input::placeholder {
   color: #9ca3af;
 }
+
+/*estilos de boton*/
 .chat-input button {
   background-color: #25d366;
   color: white;
@@ -139,3 +165,10 @@ li span {
 .chat-input button:active {
   transform: scale(0.95);
 }
+
+/*Responsive design*/
+@media (max-width: 768px) {
+  aside{
+    display: none;
+  }
+  }

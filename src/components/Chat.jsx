@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef , useEffect} from "react";
 import { messages as mockMessages } from "../services/mockApi.js";
 
-const Chat = () => {
+const Chat = ({activeUser}) => {
 
   const [text, setText] = useState("")
   const [messages, setMessages] = useState(mockMessages)
+  const chatBodyRef = useRef(null)
 
   const handleChange = (event) => {
     setText(event.target.value)
@@ -30,14 +31,27 @@ const Chat = () => {
     setText("")
   }
 
+  useEffect (() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight
+    }}, [messages])
+  
+  
+  if (!activeUser){
+    return(
+      <section className="chat-initial-message">
+      <p className="initial-message">Seleccione un usuario para empezar a conversar</p>
+      </section>
+    )
+  }
   return (
     <section className="chat">
       <header>
-        <h2>Rodrigo Perez</h2>
-        <p>Ultima conexion: hace 30 segundos</p>
+        <h2>{activeUser.firstName} {activeUser.lastName}</h2>
+        <p>{activeUser.address.country}</p>
       </header>
 
-      <main className="chat-body">
+      <main className="chat-body" ref={chatBodyRef}>
         {messages.map((message) => (
           <div
             key={message.id}
