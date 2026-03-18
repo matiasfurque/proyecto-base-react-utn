@@ -10,122 +10,122 @@ const users = [
     messages: [
       { author: "lionel", text: "Hola amigo", time: "09:12" , isMine: false },
       { author: "me", text: "Hola lio", time: "09:13" , isMine: true }
-    ]``
+    ]
   },
   {
     id: 2,
-    firstName: "Michael",
-    lastName: "Williams",
-    email: "michael.williams@gmail.com",
+    firstName: "Lautaro ",
+    lastName: "Martinez",
+    email: "lautaro.martinez@gmail.com",
     password: "pepe123",
-    address: { country: "Germany" },
-    image: "https://i.pravatar.cc/150?img=2",
+    address: { country: "Argentina" },
+    image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTJbnEvXy5kVQwftpns2g49YwcB1AJW2mn8Z02UCVCn4JODoRQ-ho4AiNxUB6iHjYDFvSnfL54D6K7G6LJGRutIRetSUwDYFx_Ccph5rXZ7HDlI1eRx97sZgSOgAhkx9I88DN63iWsYttza&s=19",
     messages: [
-      { author: "Michael", text: "Server deployed", time: "10:01", isMine: false },
-      { author: "me", text: "Ok, checking", time: "10:05", isMine: true }
+      { author: "Lautaro", text: "Sale fulbo?", time: "10:01", isMine: false },
+      { author: "me", text: "Obvio amigo", time: "10:05", isMine: true }
     ]
   },
   {
     id: 3,
-    firstName: "Sophia",
-    lastName: "Brown",
-    email: "sophia.brown@gmail.com",
+    firstName: "Rodrigo",
+    lastName: "De Paul",
+    email: "rodrigo.dePaul@gmail.com",
     password: "pepe123",
-    address: { country: "Japan" },
-    image: "https://i.pravatar.cc/150?img=3",
+    address: { country: "Argentina" },
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-Pe2-BvRLTdmCcP-VRDiV_HA3mcpiAu_hB0vo6kTAmnVPOEJ7YPMrvrCRqWrErYS1SXiRGdv1sHjHL8bVYpAh0M4ha_xyf5wPvlOu2qbhPA&s=10",
     messages: [
-      { author: "Sophia", text: "Draft ready", time: "11:22", isMine: false },
-      { author: "me", text: "Send it", time: "11:30", isMine: true }
+      { author: "Rodrigo", text: "Que haces el finde??💣💣", time: "11:22", isMine: false },
+      { author: "me", text: "No jodas rodri", time: "11:30", isMine: true }
     ]
   },
   {
     id: 4,
-    firstName: "Liam",
-    lastName: "Miller",
-    email: "liam.miller@gmail.com",
+    firstName: "Neymar",
+    lastName: "da Silva Santos Júnior",
+    email: "neymar.daSilva@gmail.com",
     password: "pepe123",
-    address: { country: "Canada" },
-    image: "https://i.pravatar.cc/150?img=4",
+    address: { country: "Brasil" },
+    image: "https://images.ctfassets.net/3mv54pzvptwz/7Jj4ryLGJazS8pDUlCK2Vg/10b71577e0270c8158d669b5fca17aa9/54331642772_05fa9ffe6b_o_dentro.jpg",
     messages: [
-      { author: "Liam", text: "Build completed", time: "12:10", isMine: false },
-      { author: "me", text: "Great", time: "12:11", isMine: true }
+      { author: "Neymar", text: "E aí, amigo, tudo bem? Faz tempo que não nos falamos!", time: "12:10", isMine: false },
+      { author: "me", text: "Está tudo calmo por aqui, Ney, você está bem?", time: "12:11", isMine: true }
     ]
   },
   {
     id: 5,
-    firstName: "Olivia",
-    lastName: "Davis",
-    email: "olivia.davis@gmail.com",
+    firstName: "Federico ",
+    lastName: "Fattori",
+    email: "federico.fattori@gmail.com",
     password: "pepe123",
-    address: { country: "United Kingdom" },
-    image: "https://i.pravatar.cc/150?img=5",
+    address: { country: "Argentina" },
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq817DvaYm9FgFtDFgycT3m6efKMmruJT96g&s",
     messages: [
-      { author: "Olivia", text: "Design uploaded", time: "13:45", isMine: false },
-      { author: "me", text: "Reviewing", time: "13:50",isMine: true }
+      { author: "Federico", text: "Amigo me falta uno para el domingo estas?", time: "13:45", isMine: false },
+      { author: "me", text: "Yyyy dejame que lo chequeo", time: "13:50",isMine: true }
     ]
   },
   {
     id: 6,
-    firstName: "Noah",
-    lastName: "Garcia",
-    email: "noah.garcia@gmail.com",
+    firstName: "Cristian",
+    lastName: "Gomez",
+    email: "cristian.gomez@gmail.com",
     password: "pepe123",
-    address: { country: "Mexico" },
-    image: "https://i.pravatar.cc/150?img=6",
+    address: { country: "Argentina" },
+    image: "https://tn.com.ar/resizer/v2/christian-gomito-gomez-leyenda-del-futbol-argentino-telam-TQL3J3W4VBG4JNOJ3FIT4JC4QM.jpg?auth=663bea068bab769cf5be95f7d0257eeb49ec98b1f334250a214f5059456c066c&width=767",
     messages: [
-      { author: "Noah", text: "Database seeded", time: "14:03", isMine: false },
-      { author: "me", text: "Thanks", time: "14:04", isMine: true }
+      { author: "Cristian", text: "Vas a la cancha el viernes?", time: "14:03", isMine: false },
+      { author: "me", text: "obvio", time: "14:04", isMine: true }
     ]
   },
   {
     id: 7,
-    firstName: "Ava",
-    lastName: "Martinez",
-    email: "ava.martinez@gmail.com",
+    firstName: "Alejandro",
+    lastName: "Garnacho",
+    email: "alejandro.garnacho@gmail.com",
     password: "pepe123",
-    address: { country: "Spain" },
-    image: "https://i.pravatar.cc/150?img=7",
+    address: { country: "Argentina" },
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjmJhFKZfB6JzHDp97yQfZ1r2Ra8nU1OzL_axdLkeJRqexEcFEHRbQeS1y4A_79QK7UvtIPrjGffF3wfjOT2UcQGv4xXISSNyqJeSPVp8&s=10",
     messages: [
-      { author: "Ava", text: "Testing UI", time: "15:20", isMine: false },
-      { author: "me", text: "Any issues?", time: "15:22", isMine: true }
+      { author: "Alejandro", text: "Ostia", time: "15:20", isMine: false },
+      { author: "me", text: "Eh?", time: "15:22", isMine: true }
     ]
   },
   {
     id: 8,
-    firstName: "Elijah",
-    lastName: "Rodriguez",
-    email: "elijah.rodriguez@gmail.com",
+    firstName: "Javier",
+    lastName: "Zanetti",
+    email: "javier.zanetti@gmail.com",
     password: "pepe123",
     address: { country: "Argentina" },
-    image: "https://i.pravatar.cc/150?img=8",
+    image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRQ7twKa0IIYc6FlkIYKJkzwjvovEdrHLH8kTntnTRmgaM-6isorqQ47HHNoGITwKhv284e5qdZT-J1AbWZ8O4S5klGoNov8H52pUcZo1Ds_pbedvF6R5DWMo5nOCIBSSqNYxBCfiTXTpBO&s=19",
     messages: [
-      { author: "Elijah", text: "Client contacted", time: "16:18", isMine: false },
+      { author: "Javier", text: "Client contacted", time: "16:18", isMine: false },
       { author: "me", text: "Waiting response", time: "16:25", isMine: true }
     ]
   },
   {
     id: 9,
-    firstName: "Isabella",
-    lastName: "Hernandez",
-    email: "isabella.hernandez@gmail.com",
+    firstName: "Osvaldo",
+    lastName: "Garcia",
+    email: "osvaldo.garcia@gmail.com",
     password: "pepe123",
-    address: { country: "Chile" },
-    image: "https://i.pravatar.cc/150?img=9",
+    address: { country: "Argentina" },
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNwjMZcI4RMS-HQIP-b8_vFuG-nud6hY4CUQ&s",
     messages: [
-      { author: "Isabella", text: "Report sent", time: "17:02", isMine: false },
-      { author: "me", text: "Received", time: "17:05", isMine: true }
+      { author: "Osvaldo Garcia", text: "Que equipo paro?", time: "17:02", isMine: false },
+      { author: "me", text: "Que se yo? vos sos el DT", time: "17:05", isMine: true }
     ]
   },
   {
     id: 10,
-    firstName: "James",
-    lastName: "Lopez",
-    email: "james.lopez@gmail.com",
+    firstName: "Reece",
+    lastName: "James",
+    email: "reece.james@gmail.com",
     password: "pepe123",
-    address: { country: "Brazil" },
-    image: "https://i.pravatar.cc/150?img=10",
+    address: { country: "Inglaterra" },
+    image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSow_sZyLo0_wuNZv4R9HftjHrMZuv550XkdYLSbsH9d8smVCojl0Mhm_Np5WfkVoDcV0FGCv6sOwDreRO99O306ogSMkcoodQ6fsUzYxcAc1uPzFI6-skfdEQCIjq89okJkNeBa4mte-s&s=19",
     messages: [
-      { author: "James", text: "Meeting confirmed", time: "18:40", isMine: false },
+      { author: "Reece James", text: "Meeting confirmed", time: "18:40", isMine: false },
       { author: "me", text: "See you then", time: "18:41", isMine: true }
     ]
   }

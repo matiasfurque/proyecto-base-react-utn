@@ -21,7 +21,7 @@ const Aside = () => {
 
   return (
     <aside>
-      <h1>Chat UTN</h1>
+      <h1>Chat de Futbol ⚽</h1>
       <input className="search" type="search" placeholder="Buscar contactos..." onChange={handleChange} />
       {
         filteredUsers.length === 0 && <p className="not-found-text">No se encontraron contactos</p>
