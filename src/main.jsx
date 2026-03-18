@@ -1,15 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { App } from "./components/App"
-
-
+import { ChatProvider } from './context/ChatContext'
+import { AuthProvider } from './context/AuthContext'
+import { RouterApp } from './router/RouterApp'
 import './styles/main.css'
-
-
-
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <AuthProvider>
+      <ChatProvider>
+        <RouterApp />
+      </ChatProvider>
+    </AuthProvider>
+  </StrictMode>
 )

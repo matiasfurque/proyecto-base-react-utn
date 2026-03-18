@@ -1,18 +1,134 @@
 const users = [
-  { id: 1, name: 'Lionel Messi', status: 'online' },
-  { id: 2, name: 'Lautaro Martinez', status: 'online' },
-  { id: 3, name: 'Julian Alvarez', status: 'online' },
-  { id: 4, name: 'Federico Fattori', status: 'offline' },
-  { id: 5, name: 'Lisandro Martinez', status: 'online' },
+  {
+    id: 1,
+    firstName: "Lionel ",
+    lastName: "Messi",
+    email: "lionel.messi@gmail.com",
+    password: "pepe123",
+    address: { country: "Argentina" },
+    image: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQOsdbCH2-v4N2LrHIP9CMgDS-GysecMBSsvOX_KkjLCwjbkL0Hgnuou6RC1uXDtxYJujgJna162FkPS3lygZBsI-zDGji3rIIJqc8nTyIqn5rrqNNism3fioo6X5TjjXsEUPMFVU1MoSs&s=19",
+    messages: [
+      { author: "lionel", text: "Hola amigo", time: "09:12" , isMine: false },
+      { author: "me", text: "Hola lio", time: "09:13" , isMine: true }
+    ]``
+  },
+  {
+    id: 2,
+    firstName: "Michael",
+    lastName: "Williams",
+    email: "michael.williams@gmail.com",
+    password: "pepe123",
+    address: { country: "Germany" },
+    image: "https://i.pravatar.cc/150?img=2",
+    messages: [
+      { author: "Michael", text: "Server deployed", time: "10:01", isMine: false },
+      { author: "me", text: "Ok, checking", time: "10:05", isMine: true }
+    ]
+  },
+  {
+    id: 3,
+    firstName: "Sophia",
+    lastName: "Brown",
+    email: "sophia.brown@gmail.com",
+    password: "pepe123",
+    address: { country: "Japan" },
+    image: "https://i.pravatar.cc/150?img=3",
+    messages: [
+      { author: "Sophia", text: "Draft ready", time: "11:22", isMine: false },
+      { author: "me", text: "Send it", time: "11:30", isMine: true }
+    ]
+  },
+  {
+    id: 4,
+    firstName: "Liam",
+    lastName: "Miller",
+    email: "liam.miller@gmail.com",
+    password: "pepe123",
+    address: { country: "Canada" },
+    image: "https://i.pravatar.cc/150?img=4",
+    messages: [
+      { author: "Liam", text: "Build completed", time: "12:10", isMine: false },
+      { author: "me", text: "Great", time: "12:11", isMine: true }
+    ]
+  },
+  {
+    id: 5,
+    firstName: "Olivia",
+    lastName: "Davis",
+    email: "olivia.davis@gmail.com",
+    password: "pepe123",
+    address: { country: "United Kingdom" },
+    image: "https://i.pravatar.cc/150?img=5",
+    messages: [
+      { author: "Olivia", text: "Design uploaded", time: "13:45", isMine: false },
+      { author: "me", text: "Reviewing", time: "13:50",isMine: true }
+    ]
+  },
+  {
+    id: 6,
+    firstName: "Noah",
+    lastName: "Garcia",
+    email: "noah.garcia@gmail.com",
+    password: "pepe123",
+    address: { country: "Mexico" },
+    image: "https://i.pravatar.cc/150?img=6",
+    messages: [
+      { author: "Noah", text: "Database seeded", time: "14:03", isMine: false },
+      { author: "me", text: "Thanks", time: "14:04", isMine: true }
+    ]
+  },
+  {
+    id: 7,
+    firstName: "Ava",
+    lastName: "Martinez",
+    email: "ava.martinez@gmail.com",
+    password: "pepe123",
+    address: { country: "Spain" },
+    image: "https://i.pravatar.cc/150?img=7",
+    messages: [
+      { author: "Ava", text: "Testing UI", time: "15:20", isMine: false },
+      { author: "me", text: "Any issues?", time: "15:22", isMine: true }
+    ]
+  },
+  {
+    id: 8,
+    firstName: "Elijah",
+    lastName: "Rodriguez",
+    email: "elijah.rodriguez@gmail.com",
+    password: "pepe123",
+    address: { country: "Argentina" },
+    image: "https://i.pravatar.cc/150?img=8",
+    messages: [
+      { author: "Elijah", text: "Client contacted", time: "16:18", isMine: false },
+      { author: "me", text: "Waiting response", time: "16:25", isMine: true }
+    ]
+  },
+  {
+    id: 9,
+    firstName: "Isabella",
+    lastName: "Hernandez",
+    email: "isabella.hernandez@gmail.com",
+    password: "pepe123",
+    address: { country: "Chile" },
+    image: "https://i.pravatar.cc/150?img=9",
+    messages: [
+      { author: "Isabella", text: "Report sent", time: "17:02", isMine: false },
+      { author: "me", text: "Received", time: "17:05", isMine: true }
+    ]
+  },
+  {
+    id: 10,
+    firstName: "James",
+    lastName: "Lopez",
+    email: "james.lopez@gmail.com",
+    password: "pepe123",
+    address: { country: "Brazil" },
+    image: "https://i.pravatar.cc/150?img=10",
+    messages: [
+      { author: "James", text: "Meeting confirmed", time: "18:40", isMine: false },
+      { author: "me", text: "See you then", time: "18:41", isMine: true }
+    ]
+  }
 ];
 
-const messages = [
-  {id: 1, author: "Lionel Messi", text: 'Hola, ¿cómo estás?', time: '10:00 AM' },
-  {id: 2, author: "me", text: 'Bien, gracias. ¿Y tú?', time: '10:05 AM' },
-  {id: 3, author: "Lionel Messi", text: 'Hoy sale fulbito?', time: '10:10 AM' },
-  {id: 4, author: "me", text: 'Mas vale leo', time: '10:15 AM' },
-  {id: 5, author: "Lionel Messi", text: 'Dale, a qué hora?', time: '10:20 AM' },
-  {id: 6, author: "me", text: 'A las 8pm', time: '10:25 AM' }
-];
-
-export { users , messages};
+export { users }

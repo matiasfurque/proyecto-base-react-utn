@@ -1,80 +1,78 @@
-import { useState, useRef , useEffect} from "react";
-import { messages as mockMessages } from "../services/mockApi.js";
+import { useState, useRef, useEffect, useContext } from 'react';
+import { ChatContext } from '../context/ChatContext';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
-const Chat = ({activeUser}) => {
+const Chat = () => {
+  const [text, setText] = useState('');
+  const chatBodyRef = useRef(null);
 
-  const [text, setText] = useState("")
-  const [messages, setMessages] = useState(mockMessages)
-  const chatBodyRef = useRef(null)
+  const { selectedUser, handleMessages } = useContext(ChatContext);
+  const { user, logout } = useAuth();
 
-  const handleChange = (event) => {
-    setText(event.target.value)
-  }
-  const handleKeyDown = (event) =>{
-    if (event.key === "Enter"){
-      sendMessage()
-    }
-  }
+  const navigate = useNavigate();
 
   const sendMessage = () => {
-    if (text.length === 0){
-      return
-    }
+    if (!text) return;
+
     const newMessage = {
-      id: messages.length + 1,
-      author: "yo",
-      text: text,
-      time: new Date().getHours() + ":" + new Date().getMinutes()
-    }
+      id: Date.now(),
+      author: user.email,
+      text,
+      isMine: true,
+      time: `${new Date().getHours()}:${new Date().getMinutes().toString().padStart(2, '0')}`,
+    };
 
-    setMessages([...messages, newMessage])
-    setText("")
-  }
+    handleMessages(newMessage);
+    setText('');
+  };
 
-  useEffect (() => {
+  useEffect(() => {
     if (chatBodyRef.current) {
-      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight
-    }}, [messages])
-  
-  
-  if (!activeUser){
-    return(
-      <section className="chat-initial-message">
-      <p className="initial-message">Seleccione un usuario para empezar a conversar</p>
-      </section>
-    )
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  }, [selectedUser]);
+
+  if (!selectedUser) {
+    return <p className="not-found-chat">Selecciona un chat 💬</p>;
   }
+
   return (
     <section className="chat">
       <header>
-        <h2>{activeUser.firstName} {activeUser.lastName}</h2>
-        <p>{activeUser.address.country}</p>
+        <h2>{selectedUser.firstName} {selectedUser.lastName}</h2>
+        <button
+          onClick={() => {
+            logout();
+            navigate('/login');
+          }}
+        >
+          Salir
+        </button>
       </header>
 
-      <main className="chat-body" ref={chatBodyRef}>
-        {messages.map((message) => (
+      <div className="chat-body" ref={chatBodyRef}>
+        {selectedUser.messages.map((msg) => (
           <div
-            key={message.id}
-            className={`message ${message.author === "Lionel Messi" ? "me" : "received"}`}
-          >
-            <p><b>{message.author}</b>: {message.text}</p>
-            <p className="timestamp">{message.time}</p>
-          </div>
+  key={msg.id}
+  className={`message ${msg.isMine ? "me" : "received"}`}
+>
+  <p>{msg.text}</p>
+  <span className="time">{msg.time}</span>
+</div>
         ))}
+      </div>
 
-        <div className="chat-input">
-          <input
-            type="text"
-            placeholder="Escribe un mensaje"
-            onChange={handleChange}
-            onKeyDown={handleKeyDown}
-            value={text}
-          />
-          <button onClick={sendMessage}>Enviar</button>
-        </div>
-      </main>
+      <div className="chat-input">
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+        />
+        <button onClick={sendMessage}>Enviar</button>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export { Chat }
+export { Chat };
