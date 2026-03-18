@@ -1,9 +1,9 @@
-/* BASE */
+/* --- BASE & APP LAYOUT --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .app {
@@ -13,7 +13,7 @@
   color: white;
 }
 
-/* ASIDE */
+/* --- ASIDE --- */
 aside {
   width: 260px;
   padding: 20px;
@@ -26,7 +26,7 @@ aside h1 {
   margin-bottom: 15px;
   font-size: 20px;
   color: #38bdf8;
-  text-align: center
+  text-align: center;
 }
 
 .search {
@@ -64,15 +64,17 @@ li:hover {
 }
 
 li img {
+  height: 40px;
   width: 40px;
   border-radius: 50%;
 }
-.address-aside{
+
+.address-aside {
   padding: 5px;
   font-size: 9px;
   color: #8696a0;
 }
-/* INFO USUARIO */
+
 .user-info {
   display: flex;
   flex-direction: column;
@@ -82,16 +84,13 @@ li img {
   font-weight: 500;
 }
 
-
-
-/* CHAT */
+/* --- CHAT AREA --- */
 .chat {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* HEADER */
 .chat header {
   padding: 15px;
   border-bottom: 1px solid #334155;
@@ -109,14 +108,7 @@ li img {
   color: white;
   cursor: pointer;
 }
-.time {
-  font-size: 11px;
-  margin-top: 4px;
-  align-self: flex-end;
-  color: #c3c9d3c4;
-}
 
-/* BODY */
 .chat-body {
   flex: 1;
   padding: 15px;
@@ -125,7 +117,8 @@ li img {
   flex-direction: column;
   gap: 10px;
 }
-.not-found-chat{
+
+.not-found-chat {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -134,9 +127,9 @@ li img {
   height: 100%;
   font-size: 45px;
   color: rgba(128, 128, 128, 0.411);
-
 }
-/* MENSAJES */
+
+/* --- MENSAJES --- */
 .message {
   max-width: 60%;
   padding: 10px 14px;
@@ -147,18 +140,12 @@ li img {
   word-break: break-word;
 }
 
-.message p {
-  margin: 0;
-}
-
-/* MENSAJE RECIBIDO */
 .received {
   background: #1e293b;
   align-self: flex-start;
   border-bottom-left-radius: 4px;
 }
 
-/* MENSAJE PROPIO */
 .me {
   background: #38bdf8;
   color: black;
@@ -166,7 +153,14 @@ li img {
   border-bottom-right-radius: 4px;
 }
 
-/* INPUT */
+.time {
+  font-size: 11px;
+  margin-top: 4px;
+  align-self: flex-end;
+  color: #c3c9d3c4;
+}
+
+/* --- INPUT DEL CHAT --- */
 .chat-input {
   display: flex;
   padding: 10px;
@@ -185,53 +179,59 @@ li img {
 
 .chat-input button {
   padding: 8px 14px;
-  border-radius: 6px;
-  border: none;
   background: #38bdf8;
   color: black;
-  cursor: pointer;
+  font-weight: bold;
 }
 
-/* LOGIN / REGISTRO */
-.section-login,
+/* --- LOGIN / REGISTRO (CON FONDO ANIMADO) --- */
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #1e1b4b);
+  background-size: 400% 400%;
+  animation: moveGradient 15s ease infinite;
+}
+
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.section-login, 
 .section-registro {
+  width: 90%;
   max-width: 400px;
-  margin: auto;
-  margin-top: 10vh;
   padding: 30px;
   background: #1e293b;
   border-radius: 10px;
-
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* TITULOS */
-.section-login h2,
+.section-login h2, 
 .section-registro h2 {
   text-align: center;
-  margin-bottom: 10px;
   color: #38bdf8;
   font-size: 32px;
-  transition: 0.2s;
 }
 
-.section-login h2:hover,
-.section-registro h2:hover {
-  color: #44ef7d;
-}
-
-/* FORM */
-.section-login form,
+.section-login form, 
 .section-registro form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* INPUTS */
-.input-login,
+/* Inputs específicos para Login/Reg */
+.input-login, 
 .input-registro {
   width: 100%;
   padding: 10px;
@@ -241,42 +241,43 @@ li img {
   color: white;
 }
 
-.input-login:focus,
+.input-login:focus, 
 .input-registro:focus {
   outline: 1px solid #38bdf8;
 }
 
-/* BOTONES */
-button {
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
+/* Botones específicos para Login/Reg */
+.section-login button, 
+.section-registro button {
+  padding: 12px;
   background: #38bdf8;
   color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.2s;
 }
 
-button:hover {
+.section-login button:hover, 
+.section-registro button:hover {
   transform: scale(1.03);
 }
 
-/* LINK REGISTRO */
 .button-reg {
   color: #ffffff;
   text-align: center;
   text-decoration: underline;
   cursor: pointer;
+  font-size: 14px;
 }
 
-/* ERROR */
 .error-form {
   color: #ef4444;
-  margin-top: 10px;
   text-align: center;
 }
 
-/* RESPONSIVE */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   aside {
     display: none;

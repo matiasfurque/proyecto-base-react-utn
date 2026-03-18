@@ -23,7 +23,8 @@ const Login = () => {
   }
 
   return (
-    <div className="section-login">
+    <div className="main-container">
+    <section className="section-login">
       <h2 >Iniciar sesión</h2>
 
       <form onSubmit={handleSubmit}>
@@ -35,6 +36,7 @@ const Login = () => {
 
         {error && <p className="error-form">{error}</p>}
       </form>
+    </section>
     </div>
   )
 }

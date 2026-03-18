@@ -34,6 +34,7 @@ const Aside = () => {
               <img src={user.image} alt="" />
               <div>
                 {user.firstName} {user.lastName}
+                <br />
                 <small className="address-aside">{user.address.country}</small>
               </div>
             </li>
