@@ -1,4 +1,4 @@
-/* --- BASE & APP LAYOUT --- */
+
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +13,6 @@
   color: white;
 }
 
-/* --- ASIDE --- */
 aside {
   width: 260px;
   padding: 20px;
@@ -47,7 +46,6 @@ ul {
   list-style: none;
 }
 
-/* ITEM USUARIO */
 li {
   display: flex;
   align-items: center;
@@ -84,7 +82,6 @@ li img {
   font-weight: 500;
 }
 
-/* --- CHAT AREA --- */
 .chat {
   flex: 1;
   display: flex;
@@ -129,7 +126,6 @@ li img {
   color: rgba(128, 128, 128, 0.411);
 }
 
-/* --- MENSAJES --- */
 .message {
   max-width: 60%;
   padding: 10px 14px;
@@ -157,10 +153,9 @@ li img {
   font-size: 11px;
   margin-top: 4px;
   align-self: flex-end;
-  color: #c3c9d3c4;
+  color: #fcfcfcc4;
 }
 
-/* --- INPUT DEL CHAT --- */
 .chat-input {
   display: flex;
   padding: 10px;
@@ -184,7 +179,68 @@ li img {
   font-weight: bold;
 }
 
-/* --- LOGIN / REGISTRO (CON FONDO ANIMADO) --- */
+
+a {
+  color: #00ffcc;
+  text-decoration: none;
+  
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.Acerca{
+  color: aliceblue;
+  text-align: center;
+}
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #1e1e2f;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
+  color: #eaeaea;
+  font-family: sans-serif;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00ffcc;
+}
+
+.container h2 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #00ffcc;
+  font-size: 1.2rem;
+}
+
+.container p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.container ul {
+  padding-left: 20px;
+}
+
+.container li {
+  margin-bottom: 8px;
+}
+
+.container a {
+  color: #00ffcc;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.container a:hover {
+  text-decoration: underline;
+  color: #00ffaa;
+}
+
 
 .main-container {
   width: 100%;
@@ -192,7 +248,7 @@ li img {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(-45deg, #0f172a, #1e293b, #0ea5e9, #1e1b4b);
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #12b154, #160d8d);
   background-size: 400% 400%;
   animation: moveGradient 15s ease infinite;
 }
@@ -230,7 +286,6 @@ li img {
   gap: 12px;
 }
 
-/* Inputs específicos para Login/Reg */
 .input-login, 
 .input-registro {
   width: 100%;
@@ -246,7 +301,6 @@ li img {
   outline: 1px solid #38bdf8;
 }
 
-/* Botones específicos para Login/Reg */
 .section-login button, 
 .section-registro button {
   padding: 12px;
@@ -277,7 +331,6 @@ li img {
   text-align: center;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   aside {
     display: none;

@@ -1,0 +1,32 @@
+Listado de rutas de carpetas para el volumen OS
+El número de serie del volumen es 5299-88B8
+C:.
+¦   estructura.txt
+¦   main.jsx
+¦   
++---components
+¦       Aside.jsx
+¦       Chat.jsx
+¦       RouteProtected.jsx
+¦       
++---context
+¦       ChatContext.jsx
+¦       
++---pages
+¦       Acerca.jsx
+¦       Registro.jsx
+¦       
++---router
+¦       RouterApp.jsx
+¦       
++---services
+¦       mockApi.js
+¦       
++---styles
+¦       main.css
+¦       
++---views
+        Home.jsx
+        Login.jsx
+        NotFound.jsx
+        

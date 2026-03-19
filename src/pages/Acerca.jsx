@@ -1,6 +1,7 @@
 export const Acerca = () => {
   return (
-    <div className="container">
+    <div className="main-container">
+      <div className="container">
       <h1>Acerca del Proyecto</h1>
 
       <h2>Descripción</h2>
@@ -11,12 +12,12 @@ export const Acerca = () => {
 
       <h2>Tecnologías utilizadas</h2>
       <ul>
-        <li>React</li>
-        <li>React Router</li>
-        <li>Context API</li>
-        <li>Vite</li>
+        <li><a href="https://react.dev/"target="_blank">React</a></li>
+        <li><a href="https://reactrouter.com/"target="_blank">React Router</a></li>
+        <li><a href="https://react.dev/"target="_blank">Context API</a></li>
+        <li><a href="https://vitejs.dev/" target="_blank">Vite</a></li>
       </ul>
-
+    
       <h2>Decisiones de desarrollo</h2>
       <p>
         Se utilizó Context para manejar la autenticación y localStorage
@@ -33,6 +34,7 @@ export const Acerca = () => {
       <p>
         Manejo correcto de la persistencia y validaciones.
       </p>
+    </div>
     </div>
   );
 };

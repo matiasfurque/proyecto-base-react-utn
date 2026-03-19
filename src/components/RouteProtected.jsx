@@ -1,10 +1,11 @@
+import { useContext } from "react"
 import { Navigate } from "react-router-dom"
-import { useAuth } from "../context/AuthContext"
+import { ChatContext } from "../context/ChatContext"
 
 const RouteProtected = ({ children }) => {
-  const { user } = useAuth()
+  const { loggedUser } = useContext(ChatContext)
 
-  if (!user) {
+  if (!loggedUser) {
     return <Navigate to="/login" />
   }
 

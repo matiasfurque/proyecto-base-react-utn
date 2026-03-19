@@ -1,26 +1,25 @@
 import { useState, useRef, useEffect, useContext } from 'react';
 import { ChatContext } from '../context/ChatContext';
-import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const Chat = () => {
   const [text, setText] = useState('');
   const chatBodyRef = useRef(null);
 
-  const { selectedUser, handleMessages } = useContext(ChatContext);
-  const { user, logout } = useAuth();
+  const { selectedUser, handleMessages, loggedUser, logout } = useContext(ChatContext);
 
   const navigate = useNavigate();
 
   const sendMessage = () => {
     if (!text) return;
 
+    const now = new Date();
     const newMessage = {
       id: Date.now(),
-      author: user.email,
+      author: loggedUser.email,
       text,
       isMine: true,
-      time: `${new Date().getHours()}:${new Date().getMinutes().toString().padStart(2, '0')}`,
+      time: `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`,
     };
 
     handleMessages(newMessage);
@@ -28,10 +27,10 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    if (chatBodyRef.current) {
-      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
-    }
-  }, [selectedUser]);
+  if (chatBodyRef.current) {
+    chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+  }
+}, [selectedUser?.messages?.length]);
 
   if (!selectedUser) {
     return <p className="not-found-chat">Selecciona un chat 💬</p>;
@@ -40,7 +39,10 @@ const Chat = () => {
   return (
     <section className="chat">
       <header>
-        <h2>{selectedUser.firstName} {selectedUser.lastName}</h2>
+        <h2>
+          {selectedUser.firstName} {selectedUser.lastName}
+        </h2>
+
         <button
           onClick={() => {
             logout();
@@ -53,21 +55,18 @@ const Chat = () => {
 
       <div className="chat-body" ref={chatBodyRef}>
         {selectedUser.messages.map((msg) => (
-          <div
-  key={msg.id}
-  className={`message ${msg.isMine ? "me" : "received"}`}
->
-  <p>{msg.text}</p>
-  <span className="time">{msg.time}</span>
-</div>
+          <div key={msg.id} className={`message ${msg.isMine ? 'me' : 'received'}`}>
+            <p>{msg.text}</p>
+            <span className="time">{msg.time}</span>
+          </div>
         ))}
       </div>
 
       <div className="chat-input">
         <input
           value={text}
-          onChange={(e) => setText(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+          onChange={(event) => setText(event.target.value)}
+          onKeyDown={(event) => event.key === 'Enter' && sendMessage()}
         />
         <button onClick={sendMessage}>Enviar</button>
       </div>
